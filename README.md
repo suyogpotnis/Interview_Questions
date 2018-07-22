@@ -1,2 +1,1 @@
-# sqlsnippets
-SQL Tips and Tricks
+sqlsnippets folder contains sql queries asked in interviews by companies
