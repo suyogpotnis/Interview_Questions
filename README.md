@@ -1,1 +1,2 @@
-sqlsnippets folder contains sql queries asked in interviews by companies
+-- Sql_Quesntions_1.docx
+- This file contains inteview questions asked in a take home assessment by an Air Flight Booking company.
