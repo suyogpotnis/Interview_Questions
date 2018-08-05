@@ -1,0 +1,33 @@
+Context: Your client is a well known airline provider across the United States.  
+They are looking to leverage third party data to understand trends and possible 
+causes of the recent decline in revenue over the previous year. We are looking 
+to do some initial data exploration and analysis to understand and validate the 
+data. After uncovering some valuable insights, we can provide the client with 
+recommendations to gain a competitive advantage over their competitors. 
+
+
+
+
+Directions: Because of space limitations please pull the data sets from 
+https://transtats.bts.gov/
+You will need data for 12 months for the year 2014.
+
+
+
+
+Questions: 
+
+1. What is the 15th most flown route? 
+2. What carrier has flown the 3rd most number of flights? How many? 
+3. What airport has the 10th most delays? 
+4. What is the second most popular day of the week to travel? Why? 
+5. What other actionable insights can we gain by leveraging the TranStats dataset?   
+
+
+
+
+Dataset Details: 
+Dataset name: On-Time Performance
+Lookup Table: Carrier Lookup
+Lookup Table: Airport Lookup
+
