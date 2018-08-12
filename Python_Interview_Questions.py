@@ -55,7 +55,7 @@ def duplicateNos(A):
             return key
         else:
             pass
-        
+
 # duplicateNos(myarr)
 
 #4. Check if the two words are Anagrams
@@ -63,10 +63,10 @@ import pyodbc
 import numpy as np
 import pandas as pd
 
-source ='listen' 
+source ='listen'
 target = 'silent'
 
-def anagramCheck(source,target):    
+def anagramCheck(source,target):
     if len(source) == len(target):
         words = list(source)
         for word in words:
@@ -90,9 +90,9 @@ def firstnonRepeatedChar(mystring):
             break
         else:
             pass
-        
+
 # firstnonRepeatedChar(mystring)
- 
+
 #6. From a Given string print out no of vowels and no of consonants
 mystring ='hello'
 
@@ -134,7 +134,7 @@ def permutations(word):
         for i in range(len(perm)+1):
             result.append(perm[:i] + char + perm[i:])
     return result
-    
+
 # permutations(word)
 
 #8.Remove Duplicate Chars from a String
@@ -144,17 +144,17 @@ def removeDuplicateChars(mystring):
     x =''
     if len(mystring) == 0:
         return print('Empty String')
-    
+
     if len(mystring) ==  1:
         return mystring
-    
+
     for chars in range(len(mystring)):
         if mystring[chars] in x:
             pass
         else:
             x = x + mystring[chars]
     return x
-            
+
 # removeDuplicateChars(mystring)
 
 #9. Check if a given string is a valid shuffle of two strings
@@ -182,10 +182,10 @@ def validStringShuffleCheck(string1, string2, string3):
 # number  = 1234567 Output: 1,234,567
 def numberString(numbr,a):
     g =''
-    
+
     if int(numbr/1000) == 0:
         return print('number less than 1000')
-    
+
     if len(a) == 0:
 
         x = int(numbr / 1000)
@@ -193,7 +193,7 @@ def numberString(numbr,a):
 
         z = str(x) + ',' + str(y)
         a.append(y)
-        
+
         if len(str(x)) < 4:
             return str(x)+','+str(y)
         else:
@@ -202,15 +202,15 @@ def numberString(numbr,a):
         x = int(numbr/1000)
         y = numbr%1000
         z = str(x)+','+str(y)
-        
+
         a.append(y)
-        
+
         if len(str(x)) >= 4:
             numberString(x,a)
         else:
             for i in a[::-1]:
-                g = g +','+ str(i) 
-            
+                g = g +','+ str(i)
+
 
         return print(str(x)+g)
 
@@ -225,11 +225,11 @@ def productArray(arr):
     a = []
     x = 1
     for i in arr:
-        x = x * i 
-    
+        x = x * i
+
     for j in arr:
         a.append(int(x/j))
-    
+
     return a
 
 # productArray(arr)
@@ -258,7 +258,7 @@ def avgStringLength(a):
         return None
     else:
         arr = a.strip().split(' ')
-    l = 0  
+    l = 0
     for i in arr:
         l =  l + len(i)
     return l/len(arr)
@@ -318,7 +318,7 @@ def neighbours(a):
 
 # neighbours(a)
 
-#`16. Longest Substring Without Repeating Characters
+# 16. Longest Substring Without Repeating Characters
 def lengthOfLongestSubstrings(s):
     if len(s) < 2:
         return 1
@@ -356,6 +356,7 @@ def lengthOfLongestSubstrings(s):
                 # print('a:' + str(a), 'String:' + string, 'longestSubstring:' + str(longestsubstring))
         return longestsubstring
 
+# 17.
 def lengthOfLongestSubstring(s):
 
     if len(s) == 0:
@@ -377,10 +378,23 @@ def lengthOfLongestSubstring(s):
                 else:
                     string = string + s[j]
                     a = a + 1
-           
 
 
+# 18] Given an n x n 2D array. Rotate the Array by 90 degrees (clockwise)
+"""
+Eg. 
+arr = a = [[1, 2, 3],
+     [4, 5, 6],
+     [7, 8, 9]]
 
+output:
+ [[7, 4, 1],
+     [8, 5, 2],
+     [9, 6, 3]]
+"""
+def rotateArray(a):
+    list_of_tuples = zip(*a[::-1])
+    return [list(elem) for elem in list_of_tuples]
 
 
 if __name__ == '__main__':
