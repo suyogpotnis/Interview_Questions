@@ -397,5 +397,112 @@ def rotateArray(a):
     return [list(elem) for elem in list_of_tuples]
 
 
+def find_runner_up_score(arr):
+
+    max_value = max(arr)
+    i = 0
+
+    while i < len(arr):
+        if max_value == max(arr):
+            arr.remove(max(arr))
+        i = i + 1
+    return max(arr)
+
+
+def find_second_lowest(students):
+
+    second_min = sorted(set(v[1] for v in students))[1]
+
+    arr = sorted([v[0] for v in students if v[1] == second_min])
+    return arr
+
+def divide(dividend, divisor):
+
+    # Creating a multiplier to keep track of positives and negatives
+    multiplier = 0
+    if dividend < 0 and divisor < 0:
+        multiplier = 1
+    elif dividend < 0 or divisor < 0:
+        multiplier = -1
+    else:
+        multiplier = 1
+
+    # converting all values to positives
+    dividend = abs(dividend)
+    divisor = abs(divisor)
+
+    if dividend == divisor:
+        return 1 * multiplier
+
+    elif dividend == 0:
+        return 0
+
+    elif divisor == 1:
+        return dividend * multiplier
+
+    else:
+        counter = 1
+
+        while dividend > divisor:
+            dividend = dividend - divisor
+            counter = counter + 1
+        return counter
+
+
+def romanToInt(x):
+    d = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
+
+    val = 0
+    arr = list(x)
+    i = 0
+    while i < len(x):
+        if d[x[i]] < d[x[i+1]] and i < len(x):
+            val = val + d[x[i+1]] - d[x[i]]
+            i = i + 2
+        else:
+            val = val + d[x[i]]
+            i = i + 1
+    return val
+
+
+def longestCommonPrefix(strs):
+
+    if len(strs) == 0 or len(strs[0]) == 0:
+        return ""
+    letter = strs[0][0]
+    dic = {letter: ""}
+    letterArray = []
+    for word in strs:
+        if len(word) == 0:
+            return ""
+        if word[0] not in dic:
+            return ""
+        else:
+            letterArray.append(word[1:])
+            print(word[1:])
+    return letter + longestCommonPrefix(letterArray)
+
+
+
+def isValid(self,s):
+    if len(s) % 2 == 1: return False
+    dic = {'(' : ')', '{' : '}', '[' : ']'}
+    stack = []
+    for char in s:
+        if char in dic:
+            stack.append(char)
+        else:
+            if not stack or dic[stack.pop()] != char:
+                return False
+    return not stack
 if __name__ == '__main__':
-    print(lengthOfLongestSubstring('dvdf'))
+    print(isValid("()"))
+
+
+
+
+
+
+
+
+
