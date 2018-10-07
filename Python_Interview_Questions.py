@@ -495,8 +495,29 @@ def isValid(self,s):
             if not stack or dic[stack.pop()] != char:
                 return False
     return not stack
+
+def negativesPositives(a):
+    temp = 0
+    for i in range(len(a)-1):
+        for j in range(i+1, len(a)):
+            if a[i] > a[j]:
+                if a[i] > 0 and a[j] > 0:
+                    pass
+                elif a[i] < 0 and a[j] < 0:
+                    pass
+                elif a[i] > 0 and a[j] < 0:
+                    temp = a[j]
+                    a[j] = a[i]
+                    a[i] = temp
+            elif a[i] < a[j]:
+                if a[i] > 0 and a[j] > 0:
+                    pass
+                elif a[i] < 0 and a[j] < 0:
+                    pass
+    return a
+
 if __name__ == '__main__':
-    print(isValid("()"))
+    print(negativesPositives([1,7,-5,9,-12,15,13,-4,-6]))
 
 
 
